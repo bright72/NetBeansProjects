@@ -12,9 +12,12 @@ import sit.model.*;
 public class TestEmployee {
     public static void main(String[] args) {
         Employee emp1 = new Employee (1,"pun",50000);
-        System.out.println("");
+        System.out.println(emp1);
+        System.out.println("pay for pun"+emp1.pay());
     
-    Manager mng1 = new Manager ();
+    Manager mng1 = new Manager (12000,2,"punpun",100000);
+        System.out.println(mng1);
+        System.out.println("pay for pun"+mng1.pay());
     
     }
     
