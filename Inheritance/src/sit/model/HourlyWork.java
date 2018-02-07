@@ -10,6 +10,7 @@ package sit.model;
  * @author harit
  */
 public class HourlyWork extends Employee {
+
     private double hourWork;
 
     @Override
@@ -24,8 +25,9 @@ public class HourlyWork extends Employee {
     public void setHourWork(double hourWork) {
         this.hourWork = hourWork;
     }
+
     @Override
-    public double  pay () {
-    return payRate*hourWork ;
+    public double pay() {
+        return payRate * hourWork;
     }
 }

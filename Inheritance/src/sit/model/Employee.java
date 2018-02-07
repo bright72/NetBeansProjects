@@ -5,15 +5,15 @@ package sit.model;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author harit
  */
 public class Employee {
+
     private long empId;
-            private String empName;
-            protected double payRate;
+    private String empName;
+    protected double payRate;
 
     @Override
     public String toString() {
@@ -49,12 +49,12 @@ public class Employee {
         this.empName = empName;
         this.payRate = payRate;
     }
-    
-    public double  pay () {
-    return payRate;
+
+    public double pay() {
+        return payRate;
     }
 
     public Employee() {
     }
-                    ;
+;
 }
