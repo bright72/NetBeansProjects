@@ -35,6 +35,7 @@ public class INT107HW4 {
         float divFloat1 = 1/1;
         float divFloat2 = 1/1;
         
+        //change variable float to double
         double sqrtFloat = Math.sqrt(-1);
         System.out.println("value of divFloat1 is "+divFloat1+"value of divFloat2 is "+divFloat2+"value of sqrtFloat is "+sqrtFloat+"\n");
         if (Float.isNaN(divFloat1)){
