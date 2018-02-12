@@ -17,13 +17,15 @@ public class Platform {
         System.out.println("New value of A " + newA + ", New value of B " + newB);
 
         //ข้อ 3.
-        for (byte i = 0; i <= 149; i++) {
-            System.out.println(i);
-            if (i == Byte.MAX_VALUE) {
-                break;
-            }
-
+        byte result = 0;
+        System.out.println("Start Loop = " + result);
+        byte min = (byte) 0;
+        byte max = (byte) 149;
+        for (byte i = 1; min != max;) {
+            min = (byte) ((byte) min + 1);
+            result = (byte) min;
+            System.out.println("Loop = " + result);
         }
-
+        System.out.println("End loop = " + result);
     }
 }
