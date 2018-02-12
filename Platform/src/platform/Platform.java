@@ -18,14 +18,14 @@ public class Platform {
 
         //ข้อ 3.
         byte result = 0;
-        System.out.println("Start Loop = " + result);
+        System.out.println("Start Loop at : " + result);
         byte min = (byte) 0;
         byte max = (byte) 149;
         for (byte i = 1; min != max;) {
-            min = (byte) ((byte) min + 1);
+            min = (byte) ((byte) min + i);
             result = (byte) min;
             System.out.println("Loop = " + result);
         }
-        System.out.println("End loop = " + result);
+        System.out.println("End last result = " + result);
     }
 }
