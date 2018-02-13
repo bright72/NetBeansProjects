@@ -24,28 +24,26 @@ public class INT107HW4 {
         
         System.out.println("Float Underflow:");
         float lowFloat = Float.MIN_VALUE;
+        System.out.println(lowFloat);
         lowFloat = lowFloat/2;
         System.out.println(lowFloat);
         
         System.out.println("Infinity/Nan:");
-        //float divFloat1 = 1/0;
-        //float divFloat2 = 0/0;
-        
-        //fix teacher code
-        float divFloat1 = 1/1;
-        float divFloat2 = 1/1;
-        
-        //change variable float to double
+        float divFloat1 = (float)1/0;
+        float divFloat2 = (float)0/0;
         double sqrtFloat = Math.sqrt(-1);
-        System.out.println("value of divFloat1 is "+divFloat1+"value of divFloat2 is "+divFloat2+"value of sqrtFloat is "+sqrtFloat+"\n");
+        System.out.println("value of divFloat1 is "+divFloat1+" value of divFloat2 is "+divFloat2+" value of sqrtFloat is "+sqrtFloat+"\n");
         if (Float.isNaN(divFloat1)){
             System.out.println("divFloat1 is NaN");
         }
+        else {
+            System.out.println("divFloat1 is " + divFloat1);
+        }
         if (Float.isNaN(divFloat2)){
-            System.out.println("divFloat2 is NaN");
+            System.out.println("divFloat2 is " + divFloat2);
         }
         if (Float.isNaN((float)sqrtFloat)){
-            System.out.println("sqrtFloat is NaN");
+            System.out.println("sqrtFloat is "+sqrtFloat);
         }
         
     }
