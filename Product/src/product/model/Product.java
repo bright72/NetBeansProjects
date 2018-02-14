@@ -3,7 +3,7 @@ package product.model;
 public class Product {
 
     protected double price;
-    private String productName;
+    protected String productName;
     protected long productId;
 
     public Product() {

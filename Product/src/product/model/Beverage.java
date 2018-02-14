@@ -39,7 +39,7 @@ public class Beverage extends Product {
         Beverage temp = null;
         if (obj != null && obj instanceof Product) {
             temp = (Beverage) obj;
-            if (productId == temp.productId  ) {
+            if (productId == temp.productId && productName.equalsIgnoreCase(productName) ) {
                 return true;
             }
         }
