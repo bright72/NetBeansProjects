@@ -4,14 +4,14 @@ public class Product {
 
     protected double price;
     private String productName;
-    private long productId;
+    protected long productId;
 
     public Product() {
     }
 
     public Product(int price, String productName, long productId) {
         this.price = price;
-       
+
         this.productName = productName;
         this.productId = productId;
     }
@@ -23,7 +23,6 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
-
 
     public String getProductName() {
         return productName;
@@ -43,12 +42,11 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "price=" + price +  ", productName=" + productName + ", productId=" + productId + '}';
+        return "Product{" + "price=" + price + ", productName=" + productName + ", productId=" + productId + '}';
     }
 
-public double TotalPrice(){
-return price;
-} 
-    
-
+    public double TotalPrice() {
+        return price;
+    }
+   
 }

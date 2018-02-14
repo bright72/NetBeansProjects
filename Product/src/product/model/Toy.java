@@ -23,7 +23,7 @@ public class Toy extends Product {
 
     @Override
     public String toString() {
-        return "Toy{" + "minimumAge=" + minimumAge + ", color=" + color + '}';
+        return "Toy{" +super.toString()+ "minimumAge=" + minimumAge + ", color=" + color + '}';
     }
     
       @Override
@@ -37,4 +37,5 @@ public class Toy extends Product {
         this.minimumAge = minimumAge;
         this.color = color;
     }
+    
 }

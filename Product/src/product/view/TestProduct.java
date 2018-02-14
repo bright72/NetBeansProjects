@@ -13,6 +13,8 @@ public class TestProduct {
         System.out.println("TotalPrice Food : "+ pd1.TotalPrice());
         
         Beverage bvr1 = new Beverage("cold",60,"tea",134436);
+        Beverage bvr2 = new Beverage("hot",60,"tea",134436);
+        Beverage bvr3 = new Beverage("cold",60,"tea",134436);
         System.out.println(bvr1);
         System.out.println("TotalPrice Beverage : "+ bvr1.TotalPrice());
         
@@ -20,6 +22,20 @@ public class TestProduct {
         System.out.println(toy1);
         System.out.println("TotalPrice Toy : "+  toy1.TotalPrice());
         
+        if(bvr1.equals(bvr2)){
+            System.out.println("same beverage ");
+      
+        }
+        else {
+        System.out.println( "different beverage ");
+        }
+        if(bvr1.equals(bvr3)){
+            System.out.println("same beverage ");
+      
+        }
+        else{
+        System.out.println("different beverage ");
+        }
     }
   
 }

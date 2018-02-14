@@ -32,4 +32,10 @@ public class Food extends Product {
         this.taste = taste;
         this.container = container;
     }
+
+    @Override
+    public String toString() {
+        return "Food{" +super.toString()+ "taste=" + taste + ", container=" + container + '}';
+    }
+    
 }

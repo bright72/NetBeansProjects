@@ -4,6 +4,15 @@ public class Beverage extends Product {
 
     private String type;
 
+    public Beverage() {
+        super();
+    }
+    
+    public Beverage(String type, int price, String productName, long productId) {
+        super(price, productName, productId);
+        this.type = type;
+    }
+
     public String gettype() {
         return type;
     }
@@ -14,7 +23,7 @@ public class Beverage extends Product {
 
     @Override
     public String toString() {
-        return "TestProduct{" + "type=" + type + '}';
+        return "TestProduct{"+ super.toString() + "type=" + type + '}';
     }
 
     @Override
@@ -23,8 +32,18 @@ public class Beverage extends Product {
         return price;
     }
 
-    public Beverage(String type, int price, String productName, long productId) {
-        super(price, productName, productId);
-        this.type = type;
+    
+    
+     public boolean equals(Object obj) {
+       
+        Beverage temp = null;
+        if (obj != null && obj instanceof Product) {
+            temp = (Beverage) obj;
+            if (productId == temp.productId  ) {
+                return true;
+            }
+        }
+        return false;
     }
+    
 }
