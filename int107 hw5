@@ -1,0 +1,7 @@
+LOADA d#8 , i
+ADDA d#9 , i
+STOREA sum,d
+DECO sum,d
+STOP
+sum: .WORD d#0
+.END
