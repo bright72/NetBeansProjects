@@ -11,7 +11,6 @@ public class Product {
 
     public Product(int price, String productName, long productId) {
         this.price = price;
-
         this.productName = productName;
         this.productId = productId;
     }

@@ -37,5 +37,16 @@ public class Toy extends Product {
         this.minimumAge = minimumAge;
         this.color = color;
     }
+       public boolean equals(Object obj) {
+       
+        Food type = null;
+        if (obj != null && obj instanceof Product) {
+            type = (Food) obj;
+            if (productId == type.productId && productName.equalsIgnoreCase(productName) ) {
+                return true;
+            }
+        }
+        return false;
+    }
     
 }
