@@ -6,7 +6,7 @@ public class Motorcycle extends Vehicle{
     private String manufacturer;
     private double gasoline;
 
-    public Motorcycle(String model, String manufacturer, double gasoline, int VehicleId) {
+    public Motorcycle(int VehicleId,String model, String manufacturer, double gasoline ) {
         super(VehicleId);
         this.model = model;
         this.manufacturer = manufacturer;
@@ -44,5 +44,10 @@ public class Motorcycle extends Vehicle{
      else{
          return false;
      }
-   }   
+   }
+
+    @Override
+    public String toString() {
+        return super.toString()+"Motorcycle{" + "model=" + model + ", manufacturer=" + manufacturer + ", gasoline=" + gasoline + '}';
+    }   
 }

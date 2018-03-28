@@ -7,7 +7,7 @@ public class Plane extends Vehicle {
     private String airway ;
     private double kerosene;
 
-    public Plane(String model, String airway, double kerosene, int VehicleId) {
+    public Plane(String model, String airway, double kerosene,int VehicleId ) {
         super(VehicleId);
         this.model = model;
         this.airway = airway;
@@ -34,18 +34,22 @@ public class Plane extends Vehicle {
         return kerosene;
     }
 
+    
     public void setKerosene(double kerosene) {
-        this.kerosene = kerosene*10;
+        this.kerosene = kerosene;
+    }
+       @Override
+    public boolean checkConsumeEnergy(double distance){
+        double actualDistance=kerosene*10;
+        if(actualDistance>=distance){
+            return true;
+        }
+        return false;
     }
     
     @Override
-     public boolean checkConsumeEnergy(double distance){
-     if(distance==kerosene){
-     return true;
-     }
-     else{
-         return false;
-     }
+    public String toString() {
+        return "Plane{" +super.toString()+ "model=" + model + ", airway=" + airway + ", kerosene=" + kerosene + '}';
+    }
      
-     }
 }
