@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Scanner;
+import org.apache.derby.impl.sql.compile.ResultSetNode;
 import sit.db.ConnectionManager;
 import sit.model.Course;
 
@@ -65,7 +68,43 @@ public class CourseController {
         return insertedRecs;
     }
 
+    public ArrayList<Course> selectCourses() throws SQLException {
+        ArrayList<Course> courseList = new ArrayList<Course>();
+        Statement stmt = con.createStatement();
+        String sql = "select * from course";
+        ResultSet rs = stmt.executeQuery(sql);
+        while (rs.next()) {
+            String cId = rs.getString("courseId");
+            String cName = rs.getString("courseNAme");
+            Course cTmp = new Course(cId, cName);
+//            System.out.println(cTmp);
+           courseList.add(cTmp);
+
+        }
+
+        return courseList;
+
+    }
+
     public void closeCourseConnection() throws SQLException {
         ConnectionManager.closeConnection(con);
+    }
+    public void executeSQLFromUser(String sql) throws SQLException{
+    Statement stmt = con.createStatement();
+    boolean hasResultset = stmt.execute(sql);
+        if (hasResultset) {
+            ResultSet rs = stmt.getResultSet();
+            while (hasResultset) {                
+                String cId = rs.getString("courseId");
+            String cName = rs.getString("courseNAme");
+            Course cTmp = new Course(cId, cName);
+                System.out.println(cTmp);
+            }
+            
+        }
+        else{
+        int updateRecs = stmt.getUpdateCount();
+            System.out.println(updateRecs+" Update Records");
+        }
     }
 }
