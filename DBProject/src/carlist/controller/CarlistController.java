@@ -60,7 +60,7 @@ public class CarlistController {
         return insertedRec;
     }
 
-    public int updateFood(Carlist carlist) throws SQLException {
+    public int updateCarlist(Carlist carlist) throws SQLException {
         int updatedRec = 0;
         String carownerName = carlist.getCarownerName();
         String carBrand = carlist.getCarBrand();
@@ -112,7 +112,7 @@ public class CarlistController {
         }
     }
         
-        public void findFoodAll() throws SQLException{
+        public void findAllCarlist() throws SQLException{
         ArrayList<Carlist> carlist = new ArrayList<Carlist>();
         String sql = "SELECT * FROM carlist";    
         Statement stmt=con.createStatement();

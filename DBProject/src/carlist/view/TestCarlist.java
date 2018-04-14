@@ -84,7 +84,7 @@ public class TestCarlist {
                         int keyword = sc.nextInt();
                         try {
                             if (keyword == 1) {
-                                carListCtrl.findFoodAll();
+                                carListCtrl.findAllCarlist();
                             } else if (keyword == 2) {
                                 System.out.print("Enter Owner Name: ");
                                 word = sc.next();
