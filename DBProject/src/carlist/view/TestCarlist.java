@@ -23,7 +23,7 @@ public class TestCarlist {
             do {
                 System.out.println("------Menu------");
                 System.out.print("(1)Create Table\n" + "(2)Add carlist\n" + "(3)Edit carlist\n" + "(4)Find carlist\n"
-                        + "(5)Show all carlist\n" + "(6)Drop carlist Table\n" + "----------------\n");
+                        + "(5)Delete carlist data\n" + "(6)Drop carlist Table\n" + "----------------\n");
                 System.out.print("Choose the menu (1-6) : ");
                 menu = sc.nextInt();
                 switch (menu) {
@@ -70,7 +70,7 @@ public class TestCarlist {
                         String ecarProblem = sc.next();
                         Carlist cl2 = new Carlist(ecarownerName, ecarBrand, ecarColour, ecarType, ecarPrice, ecarProblem);
                         try {
-                            rec2 = carListCtrl.insertCarlist(cl2);
+                            rec2 = carListCtrl.updateCarlist(cl2);
                         } catch (SQLException ex) {
                             System.out.println("Cannot Edit Data, Please Try Again");
                         }
