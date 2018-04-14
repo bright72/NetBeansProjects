@@ -47,16 +47,11 @@ public class CarlistController {
 
     public int insertCarlist(Carlist carlist) throws SQLException {
         int insertedRec = 0;
-        String carownerName = carlist.getCarownerName();
-        String carBrand = carlist.getCarBrand();
-        String carColour = carlist.getCarColour();
-        String carType = carlist.getCarType();
-        double carPrice = carlist.getCarPrice();
-        String carProblem = carlist.getCarproblem();
-        String sql = "insert into carlist(carownername,carbrand,carcolour,cartype,carprice,carproblem)"
-                + "values ('" + carownerName + "'," + carBrand + "," + carColour + "," + carType + "," + carPrice + ",'" + carProblem + "')";
+        String sql = "insert into carlist (carownerName,carBrand,carColour,carType,carPrice,carProblem) values("
+                + "'" + carlist.getCarownerName() + "','" + carlist.getCarBrand() + "','" + carlist.getCarColour() + "','" + carlist.getCarType()+ "','" + carlist.getCarproblem()+ "')";
         Statement stmt = con.createStatement();
         insertedRec = stmt.executeUpdate(sql);
+        System.out.println(insertedRec + " insert product successfully");
         return insertedRec;
     }
 
@@ -131,6 +126,9 @@ public class CarlistController {
         for(Carlist stu:carlist){
             System.out.println(stu);
         }
+        for (int i = 0; i < carlist.size(); i++) {
+                            System.out.println(carlist.get(i));
+                        }
     }
         
 

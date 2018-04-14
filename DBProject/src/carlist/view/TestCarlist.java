@@ -12,27 +12,28 @@ public class TestCarlist {
     public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(System.in);
-            System.out.print("Enter User Name : ");
+            System.out.print("Enter Database Username : ");
             String usrName = sc.next();
-            System.out.print("Enter Password : ");
+            System.out.print("Enter Database Password : ");
             String password = sc.next();
             CarlistController carListCtrl = new CarlistController(usrName, password);
 
             int menu;
             String otherMenu;
             do {
-                System.out.println("------Menu------");
-                System.out.print("(1)Create Table\n" + "(2)Add carlist\n" + "(3)Edit carlist\n" + "(4)Find carlist\n"
+                System.out.println("--------------------Menu--------------------");
+                System.out.print("(1)Create Table\n" + "(2)Add carlist data\n" + "(3)Search carlist data\n" + "(4)Find carlist data\n"
                         + "(5)Delete carlist data\n" + "(6)Drop carlist Table\n" + "----------------\n");
                 System.out.print("Choose the menu (1-6) : ");
                 menu = sc.nextInt();
+                System.out.println("--------------------------------------------");
                 switch (menu) {
                     case 1:
                         carListCtrl.creatCarListTable();
                         break;
                     case 2:
                         int rec1 = 0;
-                        System.out.println(">> Add Data");
+                        System.out.println("--------------------Add Carlist Data---------------");
                         System.out.print("Enter Car Onwer Name: ");
                         String carownerName = sc.next();
                         System.out.print("Enter Car Brand: ");
@@ -55,7 +56,7 @@ public class TestCarlist {
                         break;
                     case 3:
                         int rec2 = 0;
-                        System.out.println(">> Add Data");
+                        System.out.println("--------------------Edit Carlist Data---------------");
                         System.out.print("Enter Car Onwer Name: ");
                         String ecarownerName = sc.next();
                         System.out.print("Enter Car Brand: ");
@@ -79,12 +80,13 @@ public class TestCarlist {
 
                     case 4:
                         String word;
-                        System.out.println(">> Find Data");
+                        System.out.println("------------------Search Carlist Data------------------");
                         System.out.print("Search : (1)All (2)Owner Name (3)Car Color \nEnter: ");
                         int keyword = sc.nextInt();
                         try {
                             if (keyword == 1) {
                                 carListCtrl.findAllCarlist();
+                                
                             } else if (keyword == 2) {
                                 System.out.print("Enter Owner Name: ");
                                 word = sc.next();

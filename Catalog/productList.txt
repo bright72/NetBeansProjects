@@ -1,0 +1,8 @@
+1A111,Snack,50,
+1A112,Marshmello,70,
+1A113,Cookie,40,
+2B111,Meat,100,
+2B112,Pork,80,
+3C111,Fruit,90,
+4D111,Medicine,80
+
