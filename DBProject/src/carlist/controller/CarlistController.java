@@ -25,13 +25,13 @@ public class CarlistController {
 
     public void creatCarListTable() throws SQLException {
         String sql = "create table carlist"
-                + "(carownername varchar(50),"
+                + "(carid varchar(50),"
                 + "carbrand varchar(50),"
                 + "carcolour varchar(50),"
                 + "cartype varchar(50),"
                 + "carprice Double,"
                 + "carproblem varchar(50),"
-                + " primary key(carownername))";
+                + " primary key(carid))";
         System.out.println(sql);
         Statement stmt = con.createStatement();
         stmt.execute(sql);
@@ -42,28 +42,31 @@ public class CarlistController {
 //        System.out.println(sql);
 //        Statement stmt = con.createStatement();
 //        stmt.execute(sql);
-//        System.out.println("Drop table carlist successfully");
+//        System.out.println("Drop table carlist successfully");nohoh
 //    }
     public int insertCarlist(Carlist carlist) throws SQLException {
         int insertedRec = 0;
-//        String carownername = carlist.getCarownerName();
-//        String carbrand = carlist.getCarBrand();
-//        String carcolour = carlist.getCarColour();
-//        String cartype = carlist.getCarType();
-//        String carprice = carlist.getCarownerName();
-//        String carproblem = carlist.getCarownerName();
-        String sql = "insert into carlist (" +"carownername,carbrand,carcolour,cartype,carprice,carproblem) values('"
-                + carlist.getCarownerName() + "','" + carlist.getCarBrand() + "','" + carlist.getCarColour() + "','" + carlist.getCarType() + "'," + carlist.getCarPrice() + ",'" + carlist.getCarproblem() + "')";
+        String sql = "insert into carlist (" + "carid,carbrand,carcolour,cartype,carprice,carproblem) values('"
+                + carlist.getCarId() + "','" + carlist.getCarBrand() + "','" + carlist.getCarColour() + "','" + carlist.getCarType() + "'," + carlist.getCarPrice() + ",'" + carlist.getCarproblem() + "')";
         Statement stmt = con.createStatement();
         insertedRec = stmt.executeUpdate(sql);
         System.out.println(insertedRec + " insert product successfully");
         return insertedRec;
     }
-
-    public int updateCarlist(Carlist carlist) throws SQLException {
-        int updatedRec = 0;
+     public int updateAllCarlist(Carlist carlist) throws SQLException {
+       int updatedRec = 0;
         String sql = "UPDATE carlist set carbrand='"+carlist.getCarBrand()+"',carcolour='"+carlist.getCarColour()+"',cartype='"+carlist.getCarType()+"',carprice="+carlist.getCarPrice()+",carproblem='"+carlist.getCarproblem()+"'"
-                + " WHERE carownerName='"+carlist.getCarownerName()+"'";
+                + " WHERE carid='"+carlist.getCarId()+"'";
+        Statement stmt = con.createStatement();
+        updatedRec = stmt.executeUpdate(sql);
+        System.out.println(updatedRec + " update product successfully");
+        return updatedRec;
+    }
+
+    public int updateCarlist(String carlist,String keyword,String word) throws SQLException {
+       int updatedRec = 0;
+        String sql = "UPDATE carlist set "+ keyword +"='"+word+"'"
+                + " WHERE carid='"+carlist+"'";
         Statement stmt = con.createStatement();
         updatedRec = stmt.executeUpdate(sql);
         System.out.println(updatedRec + " update product successfully");
@@ -80,7 +83,7 @@ public class CarlistController {
 
     public int deleteCarlist(String name) throws SQLException {
         int deletedRecs = 0;
-        String sql = "delete from carlist where carownername='" + name + "'";
+        String sql = "delete from carlist where carid='" + name + "'";
         Statement stmt = con.createStatement();
         deletedRecs = stmt.executeUpdate(sql);
         return deletedRecs;
@@ -92,13 +95,13 @@ public class CarlistController {
         Statement stmt = con.createStatement();
         ResultSet resultSet = stmt.executeQuery(sql);
         while (resultSet.next()) {
-            String carownerName = resultSet.getString("carownername");
+            String carId = resultSet.getString("carid");
             String carBrand = resultSet.getString("carbrand");
             String carColour = resultSet.getString("carcolour");
             String carType = resultSet.getString("cartype");
             double carPrice = resultSet.getDouble("carprice");
             String carProblem = resultSet.getString("carproblem");
-            Carlist cl = new Carlist(carownerName, carBrand, carColour, carType, carPrice, carProblem);
+            Carlist cl = new Carlist(carId, carBrand, carColour, carType, carPrice, carProblem);
             carlist.add(cl);
         }
         System.out.println("Result:");
@@ -108,18 +111,18 @@ public class CarlistController {
     }
 
     public void findAllCarlist() throws SQLException {
-        ArrayList <Carlist> carlist = new ArrayList <Carlist>();
+        ArrayList<Carlist> carlist = new ArrayList<Carlist>();
         String sql = "SELECT * FROM carlist";
         Statement stmt = con.createStatement();
         ResultSet resultSet = stmt.executeQuery(sql);
         while (resultSet.next()) {
-            String carownerName = resultSet.getString("carownername");
+            String carId = resultSet.getString("carid");
             String carBrand = resultSet.getString("carbrand");
             String carColour = resultSet.getString("carcolour");
             String carType = resultSet.getString("cartype");
             double carPrice = resultSet.getDouble("carprice");
             String carProblem = resultSet.getString("carproblem");
-            Carlist cl = new Carlist(carownerName, carBrand, carColour, carType, carPrice, carProblem);
+            Carlist cl = new Carlist(carId, carBrand, carColour, carType, carPrice, carProblem);
             carlist.add(cl);
         }
         System.out.println("Result:");

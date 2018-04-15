@@ -10,7 +10,7 @@ package carlist.model;
  * @author harit
  */
 public class Carlist {
-    private String carownerName;
+    private String CarId;
     private String carBrand;
     private String carColour;
     private String carType;
@@ -20,8 +20,8 @@ public class Carlist {
     public Carlist() {
     }
 
-    public Carlist(String carownerName, String carBrand, String carColour, String carType, double carPrice, String carproblem) {
-        this.carownerName = carownerName;
+    public Carlist(String CarId, String carBrand, String carColour, String carType, double carPrice, String carproblem) {
+        this.CarId = CarId;
         this.carBrand = carBrand;
         this.carColour = carColour;
         this.carType = carType;
@@ -29,12 +29,12 @@ public class Carlist {
         this.carproblem = carproblem;
     }
 
-    public String getCarownerName() {
-        return carownerName;
+    public String getCarId() {
+        return CarId;
     }
 
-    public void setCarownerName(String carownerName) {
-        this.carownerName = carownerName;
+    public void setCarId(String CarId) {
+        this.CarId = CarId;
     }
 
     public String getCarBrand() {
@@ -79,8 +79,9 @@ public class Carlist {
 
     @Override
     public String toString() {
-        return "Carlist{" + "carownerName=" + carownerName + ", carBrand=" + carBrand + ", carColour=" + carColour + ", carType=" + carType + ", carPrice=" + carPrice + ", carproblem=" + carproblem + '}';
+        return "Carlist{" + "CarId=" + CarId + ", carBrand=" + carBrand + ", carColour=" + carColour + ", carType=" + carType + ", carPrice=" + carPrice + ", carproblem=" + carproblem + '}';
     }
 
+   
     
 }
