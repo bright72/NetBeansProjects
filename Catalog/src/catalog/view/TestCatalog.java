@@ -51,22 +51,17 @@ public class TestCatalog {
                             if (addProduct.equalsIgnoreCase("n")) {
                                 //do {
 
-                                    System.out.print("Enter product's ID : ");
-                                    String addProductId = usr.next();
+                                System.out.print("Enter product's ID : ");
+                                String addProductId = usr.next();
 
-                                    System.out.print("Enter product's name : ");
-                                    String addProductName = usr.next();
+                                System.out.print("Enter product's name : ");
+                                String addProductName = usr.next();
 
-                                    System.out.print("Enter product's cost : ");
-                                    String addProductCost = usr.next();
+                                System.out.print("Enter product's cost : ");
+                                String addProductCost = usr.next();
 
-                                    Catalog product = new Catalog(addProductId, addProductName, addProductCost);
-                                    catalogCtrl.insertCatalog(product);
-
-//                                    System.out.print("Do you want to add more product? (y/n): ");
-//                                    addMore = usr.next();
-
-                                //} while (addMore.equalsIgnoreCase("y"));
+                                Catalog product = new Catalog(addProductId, addProductName, addProductCost);
+                                catalogCtrl.insertCatalog(product);
 
                             }
                             if (!addProduct.equalsIgnoreCase("y") && !addProduct.equalsIgnoreCase("n")) {
@@ -82,9 +77,6 @@ public class TestCatalog {
 
                         break;
 
-//                    case 3:
-//execute here
-//                        break;
                     case 4:
                         ArrayList<Catalog> productList = catalogCtrl.selectProduct();
                         String findMore;
@@ -169,6 +161,3 @@ public class TestCatalog {
     }
 
 }
-
-// courseCtrl.executeSQLFromUsre("Select * from course where courseId = 'GEN111'");
-// courseCtrl.executeSQLFromUsre("update course set courseName = 'Strong Man' where courseId = 'GEN111'");
