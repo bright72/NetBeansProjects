@@ -31,7 +31,7 @@ public class CarlistController {
                 + "cartype varchar(50),"
                 + "carprice Double,"
                 + "carproblem varchar(50),"
-                + " primary key(carowername))";
+                + " primary key(carownername))";
         System.out.println(sql);
         Statement stmt = con.createStatement();
         stmt.execute(sql);
