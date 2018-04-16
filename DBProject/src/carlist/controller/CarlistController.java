@@ -37,13 +37,15 @@ public class CarlistController {
         stmt.execute(sql);
         System.out.println("Create table carlist successfully");
     }
-//    public void dropCarListTable() throws SQLException {
-//        String sql = "drop table carlist";
-//        System.out.println(sql);
-//        Statement stmt = con.createStatement();
-//        stmt.execute(sql);
-//        System.out.println("Drop table carlist successfully");nohoh
-//    }
+
+    public void dropCarListTable() throws SQLException {
+        String sql = "drop table carlist";
+        System.out.println(sql);
+        Statement stmt = con.createStatement();
+        stmt.execute(sql);
+        System.out.println("Drop table carlist successfully");
+    }
+
     public int insertCarlist(Carlist carlist) throws SQLException {
         int insertedRec = 0;
         String sql = "insert into carlist (" + "carid,carbrand,carcolour,cartype,carprice,carproblem) values('"
@@ -53,20 +55,21 @@ public class CarlistController {
         System.out.println(insertedRec + " insert product successfully");
         return insertedRec;
     }
-     public int updateAllCarlist(Carlist carlist) throws SQLException {
-       int updatedRec = 0;
-        String sql = "UPDATE carlist set carbrand='"+carlist.getCarBrand()+"',carcolour='"+carlist.getCarColour()+"',cartype='"+carlist.getCarType()+"',carprice="+carlist.getCarPrice()+",carproblem='"+carlist.getCarproblem()+"'"
-                + " WHERE carid='"+carlist.getCarId()+"'";
+
+    public int updateAllCarlist(Carlist carlist) throws SQLException {
+        int updatedRec = 0;
+        String sql = "UPDATE carlist set carbrand='" + carlist.getCarBrand() + "',carcolour='" + carlist.getCarColour() + "',cartype='" + carlist.getCarType() + "',carprice=" + carlist.getCarPrice() + ",carproblem='" + carlist.getCarproblem() + "'"
+                + " WHERE carid='" + carlist.getCarId() + "'";
         Statement stmt = con.createStatement();
         updatedRec = stmt.executeUpdate(sql);
         System.out.println(updatedRec + " update product successfully");
         return updatedRec;
     }
 
-    public int updateCarlist(String carlist,String keyword,String word) throws SQLException {
-       int updatedRec = 0;
-        String sql = "UPDATE carlist set "+ keyword +"='"+word+"'"
-                + " WHERE carid='"+carlist+"'";
+    public int updateCarlist(String carlist, String keyword, String word) throws SQLException {
+        int updatedRec = 0;
+        String sql = "UPDATE carlist set " + keyword + "='" + word + "'"
+                + " WHERE carid='" + carlist + "'";
         Statement stmt = con.createStatement();
         updatedRec = stmt.executeUpdate(sql);
         System.out.println(updatedRec + " update product successfully");
@@ -81,7 +84,7 @@ public class CarlistController {
         return deletedRecs;
     }
 
-    public int deleteCarlist(String name) throws SQLException {
+    public int deleteAllCarlist(String name) throws SQLException {
         int deletedRecs = 0;
         String sql = "delete from carlist where carid='" + name + "'";
         Statement stmt = con.createStatement();
