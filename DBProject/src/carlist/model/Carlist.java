@@ -10,6 +10,7 @@ package carlist.model;
  * @author harit
  */
 public class Carlist {
+
     private String CarId;
     private String carBrand;
     private String carColour;
@@ -82,6 +83,4 @@ public class Carlist {
         return "Carlist{" + "CarId=" + CarId + ", carBrand=" + carBrand + ", carColour=" + carColour + ", carType=" + carType + ", carPrice=" + carPrice + ", carproblem=" + carproblem + '}';
     }
 
-   
-    
 }
