@@ -76,7 +76,7 @@ public class CarlistController {
         return updatedRec;
     }
 
-    public int deleteCarList() throws SQLException {
+    public int deleteAllCarList() throws SQLException {
         int deletedRecs = 0;
         String sql = "delete from carlist";
         Statement stmt = con.createStatement();
@@ -84,7 +84,7 @@ public class CarlistController {
         return deletedRecs;
     }
 
-    public int deleteAllCarlist(String name) throws SQLException {
+    public int deleteCarlist(String name) throws SQLException {
         int deletedRecs = 0;
         String sql = "delete from carlist where carid='" + name + "'";
         Statement stmt = con.createStatement();

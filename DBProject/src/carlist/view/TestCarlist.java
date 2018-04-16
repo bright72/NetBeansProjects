@@ -139,7 +139,7 @@ public class TestCarlist {
                             System.out.print("Confirm to delete All Carlist (y/n): ");
                             confirm = sc.next();
                             if (confirm.equalsIgnoreCase("y")) {
-                                rec3 = carListCtrl.deleteCarList();
+                                rec3 = carListCtrl.deleteAllCarList();
                                 System.out.println("delete " + rec3 + " record");
                             }
                         } else if (select == 2) {
@@ -148,7 +148,7 @@ public class TestCarlist {
                             System.out.print("Confirm to delete " + name + " (y/n): ");
                             confirm = sc.next();
                             if (confirm.equalsIgnoreCase("y")) {
-                                rec3 = carListCtrl.deleteAllCarlist(name);
+                                rec3 = carListCtrl.deleteCarlist(name);
                                 System.out.println("delete " + rec3 + " record");
                             }
                         } else {
