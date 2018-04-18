@@ -17,7 +17,7 @@ public class CurrencyView {
     private JButton convertBtn;
 
     public CurrencyView() {
-initGui();
+        initGui();
     }
 
     public void initGui() {
