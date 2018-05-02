@@ -3,19 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package convertcurrencyproject;
+package gpacalculate;
 
 /**
  *
  * @author harit
  */
-public class ConvertCurrencyProject {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Gpaview {
     public static void main(String[] args) {
-        // TODO code application logic here
+        Gpacalculate gc = new Gpacalculate();
+        gc.loadGpaForm();
     }
-    
 }
