@@ -46,8 +46,8 @@ public class Course {
             }
         }
         if (check == false) {
-            for (int i = index; i < students.length-1; i++) {
-                students[i] = students[i+1];
+            for (int i = index; i < students.length - 1; i++) {
+                students[i] = students[i + 1];
             }
             numberOfStudents--;
             value = true;
@@ -55,10 +55,10 @@ public class Course {
             value = false;
         }
 
-    return value;
-}
+        return value;
+    }
 
-public RegisStudent[] getStudents() {
+    public RegisStudent[] getStudents() {
         return students;
     }
 
