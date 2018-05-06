@@ -14,35 +14,17 @@ public class Deck {
             for (int b = 1; b < 14; b++) {
                 int suit = -1, rank = -1;
                 switch (a) {
-                    case 0:
-                        suit = Card.SPADES;
-                        break;
-                    case 1:
-                        suit = Card.HEARTS;
-                        break;
-                    case 2:
-                        suit = Card.DIAMONDS;
-                        break;
-                    case 3:
-                        suit = Card.CLUBS;
-                        break;
+                    case 0:suit = Card.SPADES;break;
+                    case 1:suit = Card.HEARTS;break;
+                    case 2:suit = Card.DIAMONDS;break;
+                    case 3:suit = Card.CLUBS;break;
                 }
-
                 switch (b) {
-                    case 1:
-                        rank = Card.ACE;
-                        break;
-                    case 11:
-                        rank = Card.JACK;
-                        break;
-                    case 12:
-                        rank = Card.QUEEN;
-                        break;
-                    case 13:
-                        rank = Card.KING;
-                        break;
-                    default:
-                        rank = b;
+                    case 1:rank = Card.ACE;break;
+                    case 11:rank = Card.JACK;break;
+                    case 12:rank = Card.QUEEN;break;
+                    case 13:rank = Card.KING;break;
+                    default:rank = b;
                 }
                 cards[count] = new Card(rank, suit);
                 count++;
@@ -97,10 +79,8 @@ public class Deck {
     public void swap(int a, int b) {
         Card card1 = this.cards[a];
         Card card2 = this.cards[b];
-
         this.cards[b] = card1;
         this.cards[a] = card2;
-
     }
 
     /**
