@@ -5,47 +5,103 @@
  */
 package Controller;
 
+import StudentGrade.StudentGrade;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.text.DecimalFormat;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
+import view.StudentGradeView;
 
 public class CalculateListener implements ActionListener {
 
-    public CalculateListener(JTextField[] grades, JTextField[] credits, JTextField GPA) {
-        txtGrades = grades;
-        txtCredits = credits;
-        txtGPA = GPA;
-
-    }
     private JTextField txtGrades[];
     private JTextField txtCredits[];
     private JTextField txtGPA;
+    private JLabel lblSubjects[];
+
+    public CalculateListener(JTextField[] txtGrades, JTextField[] txtCredits, JTextField txtGPA, JLabel[] lblSubjects) {
+        this.txtGrades = txtGrades;
+        this.txtCredits = txtCredits;
+        this.txtGPA = txtGPA;
+        this.lblSubjects = lblSubjects;
+    }
+
+
 
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.getActionCommand());
         if (e.getActionCommand().equals("Calculate")) {
-        caculateGrade();
-        }
-        else if (e.getActionCommand().equals("Save")){
-        
-        saveToDataFile();
-        }
-        else if (e.getActionCommand().equals("Save As Object")){
-         saveToObjectFile();
-        
+            caculateGrade();
+        } else if (e.getActionCommand().equals("Save")) {
+            saveToDataFile();
+        } else if (e.getActionCommand().equals("Save As Object")) {
+            saveToObjectFile();
+
         }
     }
-    
-     public void saveToObjectFile(){
-         System.out.println("Saving To Object File......");
-     
-     }
-    
-      public void saveToDataFile(){
-       System.out.println("Saving To Data File......");
+
+    public void saveToObjectFile() {
+        System.out.println("Saving To Object File......");
+try {
+            FileOutputStream fos = new FileOutputStream("myGrade-object.dat");
+            ObjectOutputStream dos = new ObjectOutputStream(fos);
+
+            for (int i = 0; i < lblSubjects.length; i++) {
+                String subject = lblSubjects[i].getText();
+                String grade = txtGrades[i].getText();
+                String temp = txtCredits[i].getText();
+                float credit = Float.parseFloat(temp);
+                
+                StudentGrade myStdGrade = new StudentGrade(subject,grade,credit);
+                dos.writeObject(myStdGrade);
       
-      }
+
+            }
+
+            dos.close();
+
+        } catch (FileNotFoundException fnf) {
+            System.out.println(fnf);
+        } catch (IOException r) {
+            System.out.println(r);
+        }
+    }
+
+    public void saveToDataFile() {
+        System.out.println("Saving To Data File......");
+
+        try {
+            FileOutputStream fos = new FileOutputStream("myGrade.dat");
+            DataOutputStream dos = new DataOutputStream(fos);
+
+            for (int i = 0; i < lblSubjects.length; i++) {
+                String subject = lblSubjects[i].getText();
+                String grade = txtGrades[i].getText();
+                String temp = txtCredits[i].getText();
+                float credit = Float.parseFloat(temp);
+                dos.writeUTF(subject);
+                dos.writeUTF(grade);
+                dos.writeFloat(credit);
+
+            }
+            String tmp2 = txtGPA.getText();
+            float gpa = Float.parseFloat(tmp2);
+            dos.writeFloat(gpa);
+            dos.close();
+
+        } catch (FileNotFoundException fnf) {
+            System.out.println(fnf);
+        } catch (IOException r) {
+            System.out.println(r);
+        }
+
+    }
 
     public void caculateGrade() {
         DecimalFormat dc = new DecimalFormat("0.00");

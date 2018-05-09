@@ -5,11 +5,13 @@
  */
 package StudentGrade;
 
+import java.io.Serializable;
+
 /**
  *
  * @author harit
  */
-public class StudentGrade {
+public class StudentGrade implements Serializable{
 
     private String subject;
     private String grade;

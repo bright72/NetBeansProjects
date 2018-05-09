@@ -5,6 +5,7 @@ import StudentGrade.StudentGrade;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.io.Serializable;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,7 +39,7 @@ public class StudentGradeView {
         txtGPA = new JTextField("0.00");
         btnCalculate = new JButton("Calculate");
         
-        CalculateListener cal = new CalculateListener(txtGrades, txtCredits,txtGPA);
+        CalculateListener cal = new CalculateListener(txtGrades, txtCredits,txtGPA,lblSubjects);
         btnCalculate.addActionListener(cal);
         jpnStudentGrade.add(lblGPA);
         jpnStudentGrade.add(txtGPA);
@@ -63,7 +64,7 @@ public class StudentGradeView {
         btnSave = new JButton("Save");
         btnSaveAs = new JButton("Save As Object");
         
-        CalculateListener cal = new CalculateListener(txtGrades, txtCredits, txtGPA);
+        CalculateListener cal = new CalculateListener(txtGrades, txtCredits, txtGPA,lblSubjects);
         btnSave.addActionListener(cal);
         
         btnSaveAs.addActionListener(cal);
