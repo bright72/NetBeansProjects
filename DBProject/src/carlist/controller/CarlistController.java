@@ -34,7 +34,7 @@ public class CarlistController {
                 + " primary key(carid))";
         System.out.println(sql);
         Statement stmt = con.createStatement();
-        stmt.execute(sql);
+        stmt.executeUpdate(sql);
         System.out.println("Create table carlist successfully");
     }
 
@@ -42,7 +42,7 @@ public class CarlistController {
         String sql = "drop table carlist";
         System.out.println(sql);
         Statement stmt = con.createStatement();
-        stmt.execute(sql);
+        stmt.executeUpdate(sql);
         System.out.println("Drop table carlist successfully");
     }
 

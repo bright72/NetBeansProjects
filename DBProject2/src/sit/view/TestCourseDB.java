@@ -10,7 +10,7 @@ import sit.model.Course;
 public class TestCourseDB {
 
     public static void main(String[] args) {
-        try{
+        try {
             CourseController courseCtrl = new CourseController("db.properties");
             //CourseController courseCtrl = new CourseController("sit","sit");
             //courseCtrl.dropCourseTable();
@@ -29,21 +29,15 @@ public class TestCourseDB {
 //            }
 //            courseCtrl.excuteSQLFromUser("select * from course where courseId='GEN111'");
 //            courseCtrl.excuteSQLFromUser("update course set courseName = 'Strong Man' where courseId = 'GEN111'");
-                    
+
             courseCtrl.closeCourseConnection();
-        }
-        catch(ClassNotFoundException cnf){
+        } catch (ClassNotFoundException cnf) {
             System.out.println(cnf);
-        }
-        catch(SQLException cnf) {
+        } catch (SQLException cnf) {
             System.out.println(cnf);
-        }
-        catch(IOException io) {
+        } catch (IOException io) {
             System.out.println(io);
         }
-        //catch(FileNotFoundException fnf){
-        //    System.out.println(fnf);
-        //}
-        
+
     }
 }
